@@ -42,8 +42,9 @@ const IndexPage = () => {
     "https://cdn2.thecatapi.com/images/bpc.jpg"
   );
 
-  const handleClick = () => {
-    setCatImageUrl(randomCatImage());
+  const handleClick = async () => {
+    const image = await fetchCatImage();
+    setCatImageUrl(image.url);
   };
 
   return (
